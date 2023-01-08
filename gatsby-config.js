@@ -15,12 +15,28 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `lbc87kveks85`,
+        accessToken: `Xof86o9f7AjAesAJq_Od98EHMmDwg_O0mraXR6NhxO4`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/data`,
       },
     },
     `gatsby-transformer-sharp`,
