@@ -22,6 +22,15 @@ module.exports = {
       options: {
         footnotes: true,
         gfm: true,
+        plugins: [
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 700,
+              showCaptions: true,
+            },
+          },
+        ],
       },
     },
     {
